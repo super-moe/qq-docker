@@ -16,13 +16,11 @@ RUN env && useradd -m user -u ${USER_ID}
 RUN ln -sf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 
 USER user
-RUN cd && \
-    git clone https://aur.archlinux.org/linuxqq.git && \
-    cd linuxqq && \
-    makepkg
+RUN wget (wget -qO- -t1 -T2 "https://api.github.com/repos/super-moe/linuxqq/releases/latest" | grep "browser_download_url" | sed -r -n 's/.*"browser_download_url": *"(.*)".*/\1/p' )
+
 
 USER root
-RUN pacman --noconfirm -U /home/user/linuxqq/linuxqq-*.pkg.tar.zst
+RUN pacman --noconfirm -U /home/user/linuxqq-*.pkg.tar.zst
 
 USER user
 RUN rm -rf ~/linuxqq && mkdir -p ~/.config/QQ
