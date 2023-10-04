@@ -20,7 +20,7 @@ RUN ["/bin/bash", "-c", "wget -qO- -t1 -T2 \"https://api.github.com/repos/super-
 
 
 USER root
-RUN pacman --noconfirm -U /home/user/linuxqq-*.pkg.tar.zst
+RUN pacman --noconfirm -U /home/user/linuxqq.pkg.tar.zst
 
 USER user
 RUN rm -rf ~/linuxqq && mkdir -p ~/.config/QQ
