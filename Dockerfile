@@ -1,6 +1,6 @@
 FROM archlinux:latest
 
-RUN echo 'Server = https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
+RUN echo 'Server = https://mirrors.sustech.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
 
 RUN pacman --noconfirm -Sy archlinux-keyring && \
     pacman-key --init && \
