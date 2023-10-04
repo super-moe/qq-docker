@@ -28,3 +28,11 @@ services:
     shm_size: 2gb
     devices:
       - /dev/dri/card0
+networks:
+  dc-oa:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.15.0.0/16
+          gateway: 172.15.0.1
