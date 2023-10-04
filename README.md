@@ -12,6 +12,8 @@
 
 同时修改 `Dockerfile` 内的 `network` 选项。
 
+使用 https://github.com/super-moe/linuxqq 作为预打包软件。
+
 ## 运行
 
 ```
