@@ -4,9 +4,12 @@
 
 ## 修改
 建议在 `/etc/docker/daemon.json` 内添加 
-```{
+```
+{
     "bip":"192.168.0.1/24"
-}```
+}
+```
+
 同时修改 `Dockerfile` 内的 `network` 选项。
 
 ## 运行
