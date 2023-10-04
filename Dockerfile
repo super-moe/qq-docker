@@ -17,7 +17,7 @@ RUN ln -sf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 
 USER user
 RUN ["/bin/bash", "-c", "wget -qO- -t1 -T2 \"https://api.github.com/repos/super-moe/linuxqq/releases/latest\" | grep \"browser_download_url\" | sed -r -n 's/.*\"browser_download_url\": *\"(.*)\".*/\\1/p' | xargs wget -O ~/linuxqq.pkg.tar.zst"]
-RUN ["/bin/bash", "-c", "tar -xzf ~/linuxqq.tar.gz -C ~/"]
+
 
 USER root
 RUN pacman --noconfirm -U /home/user/linuxqq-*.pkg.tar.zst
