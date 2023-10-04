@@ -16,7 +16,7 @@ RUN env && useradd -m user -u ${USER_ID}
 RUN ln -sf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 
 USER user
-RUN wget (wget -qO- -t1 -T2 "https://api.github.com/repos/super-moe/linuxqq/releases/latest" | grep "browser_download_url" | sed -r -n 's/.*"browser_download_url": *"(.*)".*/\1/p' )
+RUN ["/bin/bash", "-c", "wget -qO- -t1 -T2 \"https://api.github.com/repos/super-moe/linuxqq/releases/latest\" | grep \"browser_download_url\" | sed -r -n 's/.*\"browser_download_url\": *\"(.*)\".*/\\1/p' | xargs wget -O ~/linuxqq.tar.gz"]
 
 
 USER root
