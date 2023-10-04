@@ -12,6 +12,9 @@
 
 同时修改 `Dockerfile` 内的 `network` 选项。
 
+使用的 docker 为actions自动构建的image,位于 https://hub.docker.com/r/ntdgy2001/linux-qq。
+如果需要自己构建，请将 docker-compose.yml 中的 build 项取消注释并注释掉 image 项。
+
 使用 https://github.com/super-moe/linuxqq 作为预打包软件。
 
 ## 运行

@@ -2,11 +2,12 @@ version: '3'
 
 services:
   qq:
-    build: 
-      context: .
-      args:
-        USER_ID: ${USER_ID}
-        TIMEZONE: ${TIMEZONE}
+    # build: 
+    #   context: .
+    #   args:
+    #     USER_ID: ${USER_ID}
+    #     TIMEZONE: ${TIMEZONE}
+    image: examples/web
     environment:
       - LANG=zh_CN.UTF-8
       - GTK_IM_MODULE=fcitx
