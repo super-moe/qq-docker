@@ -35,7 +35,7 @@ jobs:
         with:
           push: true
           tags: |
-            master:latest
-            ${{ env.COMMIT_HASH }}
+            ntdgy/linux-qq:latest
+            ntdgy/linux-qq:${{ env.COMMIT_HASH }}
           file: ./Dockerfile
     
