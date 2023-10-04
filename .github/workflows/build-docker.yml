@@ -19,9 +19,8 @@ jobs:
       - name: Extract Version
         id: version_step
         run: |
-          echo "VERSION=${GITHUB_REF#$"refs/tags/v"}" >> $GITHUB_ENV
-          echo "VERSION_TAG=$GITHUB_REPOSITORY:${GITHUB_REF#$"refs/tags/v"}" >> $GITHUB_ENV
-          echo "LATEST_TAG=$GITHUB_REPOSITORY:latest" >> $GITHUB_ENV
+          # get commit hash
+          echo "COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
 
       - name: Log in to Docker Hub
@@ -36,7 +35,7 @@ jobs:
         with:
           push: true
           tags: |
-            ${{ env.VERSION_TAG }}
-            ${{ env.LATEST_TAG }}
+            master:latest
+            ${{ env.COMMIT_HASH }}
           file: ./Dockerfile
     
