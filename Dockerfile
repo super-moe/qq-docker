@@ -12,7 +12,7 @@ RUN pacman --noconfirm -Sy archlinux-keyring && \
 # ARG USER_ID
 # ARG TIMEZONE
 
-RUN env && useradd -m user -u 1044
+RUN env && useradd -m user 
 # RUN ln -sf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 
 USER user
