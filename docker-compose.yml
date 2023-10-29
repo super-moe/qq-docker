@@ -25,7 +25,7 @@ services:
       - "./QQ/:/home/user/.config/QQ/"
       - "./shared/:/home/user/shared/"
     hostname: ${HOSTNAME}
-    command: 'linuxqq'
+    command: 'linuxqq --no-sandbox'
     shm_size: 2gb
     devices:
       - /dev/dri/card0
